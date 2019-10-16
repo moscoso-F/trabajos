@@ -1,0 +1,30 @@
+
+
+ion-content{
+    --ion-background-color:#353535;
+    
+}
+
+.item-content {
+    padding:20px;
+    --ion-background-color: #284B63;
+    background:#D9D9D9;
+    border-width: 3px;
+    border-radius: 8px;
+    border-style: ridge;
+    border-color: #353535; 
+    margin-top: 3px;
+    font-family: "FuenteBarber";
+    width: 100%;
+  }
+
+  h2{
+    margin-top: 0px;
+    font-family: "FuenteBarber";
+  }
+
+  ion-toolbar{
+    --background: #284B63;
+    color: white;
+    font-family: "FuenteBarber";
+}

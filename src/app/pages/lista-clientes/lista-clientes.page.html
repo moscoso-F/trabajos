@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Clientes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content>
+  <br>
+  <ion-virtual-scroll [items]="listado">
+    <ion-item *virtualItem="let item">
+      <div class="item-content">
+      <h2> {{ item.nombre }}</h2>
+      Apellidos: {{ item.apellidos }},
+      Dni: {{ item.dni }},
+      Teléfono: {{ item.tfno }},
+      Correo: {{ item.correo }},
+      Fecha de Nacimiento: {{ item.fechaNac }}
+      </div>
+    </ion-item>
+  </ion-virtual-scroll>
+  
+
+

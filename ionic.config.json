@@ -1,5 +1,7 @@
 {
   "name": "tabsMenu",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
