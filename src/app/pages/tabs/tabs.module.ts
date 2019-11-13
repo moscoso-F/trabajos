@@ -14,7 +14,7 @@ const routes: Routes = [
      children:[
       { path: '', redirectTo: 'lista-clientes', pathMatch: 'full'},
       { path: 'lista-clientes', loadChildren: () => import('../lista-clientes/lista-clientes.module').then( m => m.ListaClientesPageModule)},
-      { path: 'details', loadChildren: () => import('../details/details.module').then( m => m.DetailsPageModule)},
+      { path: 'lista-citas', loadChildren: () => import('../lista-citas/lista-citas.module').then( m => m.ListaCitasPageModule)},
       { path: 'admin-dias', loadChildren: () => import('../admin-dias/admin-dias.module').then( m => m.AdminDiasPageModule)},
      ]
   },

@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>lista-citas</ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <div>
+        <ion-item>
+            <ion-select [(ngModel)]="valorSelect" interface="popover">
+              <ion-select-option value="nombre">Nombre</ion-select-option>
+              <ion-select-option value="dia">Día</ion-select-option>
+            </ion-select>
+            <ion-searchbar placeholder="¿Que desea buscar?"  animated (ionChange)="buscarCita($event)">
+              </ion-searchbar>
+          </ion-item>
+    </div>
+
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+<span [ngSwitch]="valorSelect">
+<ion-virtual-scroll *ngSwitchCase="'dia'" [items]="listado | filtro:textoBuscar">
+    <ion-item *virtualItem="let item"> 
+      <div class="item-content">
+        
+      <h2> {{ item.nomCliente }}</h2>
+      Hora: {{ item.hora }},
+      Día: {{ item.dia }},
+      <ion-button class="btnBorrar" (click)="borrarCita(item)"><ion-icon name="trash"></ion-icon></ion-button>
+      <br>
+      Servicio: {{ item.nomServicio }}
+
+      </div>
+    </ion-item>
+  </ion-virtual-scroll>
+
+  <ion-virtual-scroll *ngSwitchCase="'nombre'" [items]="listado | filtro2:textoBuscar">
+      <ion-item *virtualItem="let item"> 
+        <div class="item-content">
+          
+        <h2> {{ item.nomCliente }}</h2>
+        Hora: {{ item.hora }},
+        Día: {{ item.dia }},
+        <ion-button class="btnBorrar" (click)="borrarCita(item.idCita)"><ion-icon name="trash"></ion-icon></ion-button>
+        <br>
+        Servicio: {{ item.nomServicio }}
+        </div>
+      </ion-item>
+    </ion-virtual-scroll>
+</span>
+  
+</ion-content>

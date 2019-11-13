@@ -8,10 +8,10 @@
  
     <div class="hola"> 
     <ion-item class="selDia">
-    <ion-datetime displayFormat="DD/MM/YYYY" min="2019-10-15" max="2025-10-15" placeholder="Pulsa para seleccionar un día"><br></ion-datetime>
+    <ion-datetime displayFormat="DD-MM-YYYY" min="{{diaActual}}" max="2025-10-15" placeholder="Pulsa para seleccionar un día"><br></ion-datetime>
     </ion-item>
     <div class="divCentrado"> 
-      <ion-button class="round">Agregar día libre</ion-button>
+      <ion-button class="round" (click)="insertarDiaLibre()">Agregar día libre</ion-button>
     </div>
 
     </div>
@@ -22,6 +22,7 @@
       <ion-item *virtualItem="let item" class="dias" lines="none">
         <div class="item-content">
         {{ item.diaLibre }}
+        <ion-button class="btnBorrar" (click)="borrarDiaLibre(item.diaLibre)"><ion-icon name="trash"></ion-icon></ion-button>
         </div>
       </ion-item>
     </ion-virtual-scroll>
